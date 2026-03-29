@@ -17,7 +17,9 @@ npm run preview   # Preview production build
 This is a single-component React app (Vite + React 19). All logic lives in `src/App.jsx` — there are no child components, routing, or external state management.
 
 **Known bugs and issues (intentional — this is a course starter project):**
-- `amount` is stored as a string, so `reduce` on `totalIncome`/`totalExpenses` uses string concatenation instead of numeric addition
-- "Freelance Work" is marked `type: "income"` in the seed data but has `category: "salary"` and is rendered as an expense in the UI (type mismatch bug)
-- No delete functionality
+- "Freelance Work" is marked `type: "expense"` in the seed data but should be `type: "income"` (type mismatch bug — not yet fixed)
 - Minimal styling with no responsive design
+
+**Fixed:**
+- `amount` values are now stored as numbers; `parseFloat` used in reduce calls to ensure correct numeric addition
+- Delete button added to each transaction row with a confirmation dialog before removing

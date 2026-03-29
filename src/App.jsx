@@ -61,7 +61,9 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    setTransactions(transactions.filter(t => t.id !== id));
+    if (window.confirm("Are you sure you want to delete this transaction?")) {
+      setTransactions(transactions.filter(t => t.id !== id));
+    }
   };
 
 
